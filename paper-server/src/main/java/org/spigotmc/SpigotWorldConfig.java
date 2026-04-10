@@ -397,9 +397,9 @@ public class SpigotWorldConfig {
     public int maxTntTicksPerTick;
     private void maxTntPerTick() {
         if (SpigotConfig.version < 7) {
-            this.set("max-tnt-per-tick", 10000000000);
+            this.set("max-tnt-per-tick", 1000000);
         }
-        this.maxTntTicksPerTick = this.getInt("max-tnt-per-tick", 10000000000);
+        this.maxTntTicksPerTick = this.getInt("max-tnt-per-tick", 1000000);
         this.log("Max TNT Explosions: " + this.maxTntTicksPerTick);
     }
 
