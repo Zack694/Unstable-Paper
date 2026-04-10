@@ -177,7 +177,7 @@ public class GlobalConfiguration extends ConfigurationPart {
         @Comment("This setting controls if players should be able to break bedrock, end portals and other intended to be permanent blocks.")
         public boolean allowPermanentBlockBreakExploits = false;
         @Comment("This setting controls if player should be able to use TNT duplication, but this also allows duplicating carpet, rails and potentially other items")
-        public boolean allowPistonDuplication = false;
+        public boolean allowPistonDuplication = true;
         public boolean performUsernameValidation = true;
         @Comment("This setting controls if players should be able to create headless pistons.")
         public boolean allowHeadlessPistons = false;
