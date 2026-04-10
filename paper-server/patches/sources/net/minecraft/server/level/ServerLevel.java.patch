@@ -478,6 +478,17 @@
 +    // Paper end - log detailed entity tick information
 +
      public void tickNonPassenger(Entity entity) {
++        // Unstable Paper start - restore vanilla lazy chunk entity tick behavior
++        {
++            net.minecraft.world.level.ChunkPos cp = entity.chunkPosition();
++            net.minecraft.server.level.ChunkHolder holder = this.chunkSource.chunkMap.getVisibleChunkIfPresent(
++                net.minecraft.world.level.ChunkPos.asLong(cp.x, cp.z)
++            );
++            if (holder != null && holder.getTicketLevel() > net.minecraft.server.level.ChunkLevel.ENTITY_TICKING_LEVEL) {
++                return;
++            }
++        }
++        // Unstable Paper end - restore vanilla lazy chunk entity tick behavior
 +        // Paper start - log detailed entity tick information
 +        ca.spottedleaf.moonrise.common.util.TickThread.ensureTickThread("Cannot tick an entity off-main");
 +        try {
